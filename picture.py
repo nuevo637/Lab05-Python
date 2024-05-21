@@ -37,10 +37,10 @@ class Picture:
   #FUNCIÓN PENDIENTE: DEVUELVE UNA NUEVA FIGURA AL LADO DERECHO
   def join(self, p):
     unido = []
-    for value in self.img:
-      filaJunta = ""
-      filaJunta += value + p[value]
-    return Picture(None)
+    for i in range(len(self.img)):
+      filaJunta = self.img[i] + p.img[i]
+      unido.append(filaJunta)
+    return Picture(unido)
 
   #FUNCIÓN PENDIENTE: 
   def up(self, p):
