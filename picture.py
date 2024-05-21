@@ -45,16 +45,12 @@ class Picture:
 
   #FUNCIÓN REALIZADA: DEVUELVE UNA FIGURA SELF ENCIMA DE LA FIGURA P 
   def up(self, p):
-    sobrepuesto = []
-    for fila in self.img:  
-      filaSobrepuesta = ""
-      for caracter in fila:  
-        if caracter != " ":
-          filaSobrepuesta += caracter  
-        else:
-          filaSobrepuesta += p.img[self.img.index(fila)][fila.index(caracter)]
-      sobrepuesto.append(filaSobrepuesta)
-    return Picture(sobrepuesto)
+    compuesto = []
+    for fila in self.img:
+      compuesto.append(fila)
+    for fila in p.img:
+      compuesto.append(fila)
+    return Picture(compuesto)
 
   #FUNCIÓN REALIZADA: DEVUELVE UNA FIGURA P ENCIMA DE LA FIGURA SELF 
   def under(self, p):
@@ -80,14 +76,19 @@ class Picture:
   #FUNCIÓN PENDIENTE: 
   def verticalRepeat(self, n):
     repetidoV = []
-    for idx in range(n):
+    for i in range(n):
       for fila in self.img:
         repetidoV.append(fila)
     return Picture(repetidoV)
 
   #Extra: Sólo para realmente viciosos 
   def rotate(self):
-    """Devuelve una figura rotada en 90 grados, puede ser en sentido horario
-    o antihorario"""
-    return Picture(None)
+    b = []
+    lenSelf = len(self.img)
+    for i in range(lenSelf):
+      a = ""
+      for value in self.img:
+        a += value[lenSelf - 1 - i]
+      b.append(a)
+    return Picture(b)
 
