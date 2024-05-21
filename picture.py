@@ -54,11 +54,18 @@ class Picture:
       sobrepuesto.append(filaSobrepuesta)
     return Picture(sobrepuesto)
 
-  #FUNCIÓN PENDIENTE: 
+  #FUNCIÓN REALIZADA: DEVUELVE UNA FIGURA P ENCIMA DE LA FIGURA SELF 
   def under(self, p):
-    """ Devuelve una nueva figura poniendo la figura p sobre la
-        figura actual """
-    return Picture(None)
+    sobrepuesto = []
+    for fila in p.img:  
+      filaSobrepuesta = ""
+      for caracter in fila:  
+        if caracter != " ":
+          filaSobrepuesta += caracter
+        else:
+          filaSobrepuesta += self.img[p.img.index(fila)][fila.index(caracter)]  
+      sobrepuesto.append(filaSobrepuesta)
+    return Picture(sobrepuesto)
   
   #FUNCIÓN PENDIENTE: 
   def horizontalRepeat(self, n):
