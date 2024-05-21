@@ -1,7 +1,7 @@
 from interpreter import draw
 from chessPictures import *
 
-peon = Picture(BISHOP)
-rey = Picture(KING)
-tablero = peon.join(rey)
+peon = Picture(KING)
+ficha = Picture(SQUARE)
+tablero = peon.up(ficha)
 draw(tablero)

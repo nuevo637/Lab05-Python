@@ -28,13 +28,12 @@ class Picture:
       negativo = []
       for value in self.img:
           filaInvertida = ""
-          for character in value:
-              inverted_character = self._invColor(character)
-              filaInvertida += inverted_character
+          for caracter in value:
+              filaInvertida += self._invColor(caracter)
           negativo.append(filaInvertida)
       return Picture(negativo)
 
-  #FUNCIÓN PENDIENTE: DEVUELVE UNA NUEVA FIGURA AL LADO DERECHO
+  #FUNCIÓN REALIZADA: DEVUELVE UNA NUEVA FIGURA AL LADO DERECHO
   def join(self, p):
     unido = []
     for i in range(len(self.img)):
@@ -42,9 +41,18 @@ class Picture:
       unido.append(filaJunta)
     return Picture(unido)
 
-  #FUNCIÓN PENDIENTE: 
+  #FUNCIÓN REALIZADA: DEVUELVE UNA FIGURA SELF ENCIMA DE LA FIGURA P 
   def up(self, p):
-    return Picture(None)
+    sobrepuesto = []
+    for fila in self.img:  
+      filaSobrepuesta = ""
+      for caracter in fila:  
+        if caracter != " ":
+          filaSobrepuesta += caracter  
+        else:
+          filaSobrepuesta += p.img[self.img.index(fila)][fila.index(caracter)]
+      sobrepuesto.append(filaSobrepuesta)
+    return Picture(sobrepuesto)
 
   #FUNCIÓN PENDIENTE: 
   def under(self, p):
