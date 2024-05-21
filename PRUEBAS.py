@@ -3,5 +3,5 @@ from chessPictures import *
 
 peon = Picture(KNIGHT)
 #ficha = Picture(SQUARE)
-tablero = peon.horizontalMirror()
+tablero = peon.verticalRepeat(4)
 draw(tablero)

@@ -79,7 +79,11 @@ class Picture:
 
   #FUNCIÓN PENDIENTE: 
   def verticalRepeat(self, n):
-    return Picture(None)
+    repetidoV = []
+    for idx in range(n):
+      for fila in self.img:
+        repetidoV.append(fila)
+    return Picture(repetidoV)
 
   #Extra: Sólo para realmente viciosos 
   def rotate(self):
