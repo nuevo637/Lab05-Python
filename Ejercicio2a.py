@@ -2,5 +2,6 @@ from interpreter import draw
 from chessPictures import *
 
 peon = Picture(BISHOP)
-peonNegro = peon.negative()
-draw(peonNegro)
+rey = Picture(KING)
+tablero = peon.join(rey)
+draw(tablero)
