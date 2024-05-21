@@ -16,7 +16,7 @@ class Picture:
     vertical = []
     for value in self.img:
       vertical.append(value[::-1])
-    return vertical
+    return Picture(vertical)
 
   #FUNCIÓN REALIZADA: DEVUELVE LA IMAGEN REFLEJADA HORIZONTALMENTE
   def horizontalMirror(self):
