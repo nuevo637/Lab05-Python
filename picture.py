@@ -69,9 +69,11 @@ class Picture:
   
   #FUNCIÓN PENDIENTE: 
   def horizontalRepeat(self, n):
-    """ Devuelve una nueva figura repitiendo la figura actual al costado
-        la cantidad de veces que indique el valor de n """
-    return Picture(None)
+    repetidoH = []
+    for fila in self.img:
+      filaRepetida = fila * n
+      repetidoH.append(filaRepetida)
+    return Picture(repetidoH)
 
   #FUNCIÓN PENDIENTE: 
   def verticalRepeat(self, n):
