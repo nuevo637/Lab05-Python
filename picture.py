@@ -18,10 +18,12 @@ class Picture:
       vertical.append(value[::-1])
     return vertical
 
-  #FUNCIÓN PENDIENTE: 
+  #FUNCIÓN REALIZADA: DEVUELVE LA IMAGEN REFLEJADA HORIZONTALMENTE
   def horizontalMirror(self):
-    """ Devuelve el espejo horizontal de la imagen """
-    return Picture(None)
+    horizontal = []
+    for i in range(len(self.img), -1, -1):
+      horizontal.append(self.img[i -1])
+    return Picture(horizontal)
 
   #FUNCIÓN REALIZADA: DEVUELVE EL COLOR CONTRARIO DE LA IMAGEN
   def negative(self):

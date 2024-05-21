@@ -1,7 +1,7 @@
 from interpreter import draw
 from chessPictures import *
 
-peon = Picture(KING)
+peon = Picture(KNIGHT)
 #ficha = Picture(SQUARE)
-tablero = peon.horizontalRepeat(3)
+tablero = peon.horizontalMirror()
 draw(tablero)
