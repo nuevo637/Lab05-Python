@@ -67,7 +67,7 @@ class Picture:
       sobrepuesto.append(filaSobrepuesta)
     return Picture(sobrepuesto)
   
-  #FUNCIÓN PENDIENTE: 
+  #FUNCIÓN REALIZADA: Repite n veces al lado derecho la imagen generada
   def horizontalRepeat(self, n):
     repetidoH = []
     for fila in self.img:
