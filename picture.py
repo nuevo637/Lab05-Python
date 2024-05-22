@@ -11,21 +11,21 @@ class Picture:
       return color
     return inverter[color]
 
-  #FUNCIÓN REALIZADA: DEVUELVE LA IMAGEN REFLEJADA VERTICALMENTE
+  #1. FUNCIÓN REALIZADA: DEVUELVE LA IMAGEN REFLEJADA VERTICALMENTE
   def verticalMirror(self):
     vertical = []
     for value in self.img:
       vertical.append(value[::-1])
     return Picture(vertical)
 
-  #FUNCIÓN REALIZADA: DEVUELVE LA IMAGEN REFLEJADA HORIZONTALMENTE
+  #2. FUNCIÓN REALIZADA: DEVUELVE LA IMAGEN REFLEJADA HORIZONTALMENTE
   def horizontalMirror(self):
     horizontal = []
     for i in range(len(self.img), -1, -1):
       horizontal.append(self.img[i -1])
     return Picture(horizontal)
 
-  #FUNCIÓN REALIZADA: DEVUELVE EL COLOR CONTRARIO DE LA IMAGEN
+  #3. FUNCIÓN REALIZADA: DEVUELVE EL COLOR CONTRARIO DE LA IMAGEN
   def negative(self):
       negativo = []
       for value in self.img:
@@ -35,7 +35,7 @@ class Picture:
           negativo.append(filaInvertida)
       return Picture(negativo)
 
-  #FUNCIÓN REALIZADA: DEVUELVE UNA NUEVA FIGURA AL LADO DERECHO
+  #4. FUNCIÓN REALIZADA: DEVUELVE UNA NUEVA FIGURA AL LADO DERECHO
   def join(self, p):
     unido = []
     for i in range(len(self.img)):
@@ -43,7 +43,7 @@ class Picture:
       unido.append(filaJunta)
     return Picture(unido)
 
-  #FUNCIÓN REALIZADA: DEVUELVE UNA FIGURA SELF ENCIMA DE LA FIGURA P 
+  #5. FUNCIÓN REALIZADA: DEVUELVE UNA FIGURA SELF ENCIMA DE LA FIGURA P 
   def up(self, p):
     compuesto = []
     for fila in self.img:
@@ -52,7 +52,7 @@ class Picture:
       compuesto.append(fila)
     return Picture(compuesto)
 
-  #FUNCIÓN REALIZADA: DEVUELVE UNA FIGURA P ENCIMA DE LA FIGURA SELF 
+  #6. FUNCIÓN REALIZADA: DEVUELVE UNA FIGURA P ENCIMA DE LA FIGURA SELF 
   def under(self, p):
     sobrepuesto = []
     for fila_index, fila in enumerate(p.img):  
@@ -65,7 +65,7 @@ class Picture:
       sobrepuesto.append(filaSobrepuesta)
     return Picture(sobrepuesto)
   
-  #FUNCIÓN REALIZADA: Repite n veces al lado derecho la imagen generada
+  #7. FUNCIÓN REALIZADA: Repite n veces al lado derecho la imagen generada
   def horizontalRepeat(self, n):
     repetidoH = []
     for fila in self.img:
@@ -73,7 +73,7 @@ class Picture:
       repetidoH.append(filaRepetida)
     return Picture(repetidoH)
 
-  #FUNCIÓN PENDIENTE: 
+  #8. FUNCIÓN REALIZADA: Repite n veces hacia la dirección de abajo
   def verticalRepeat(self, n):
     repetidoV = []
     for i in range(n):
@@ -81,7 +81,7 @@ class Picture:
         repetidoV.append(fila)
     return Picture(repetidoV)
 
-  #Extra: Sólo para realmente viciosos 
+  #Extra 9.: Sólo para realmente viciosos 
   def rotate(self):
     b = []
     lenSelf = len(self.img)
