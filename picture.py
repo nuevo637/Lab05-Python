@@ -55,13 +55,13 @@ class Picture:
   #FUNCIÓN REALIZADA: DEVUELVE UNA FIGURA P ENCIMA DE LA FIGURA SELF 
   def under(self, p):
     sobrepuesto = []
-    for fila in p.img:  
+    for fila_index, fila in enumerate(p.img):  
       filaSobrepuesta = ""
-      for caracter in fila:  
+      for col_index, caracter in enumerate(fila):  
         if caracter != " ":
           filaSobrepuesta += caracter
         else:
-          filaSobrepuesta += self.img[p.img.index(fila)][fila.index(caracter)]  
+          filaSobrepuesta += self.img[fila_index][col_index]  
       sobrepuesto.append(filaSobrepuesta)
     return Picture(sobrepuesto)
   
